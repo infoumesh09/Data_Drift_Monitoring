@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-background text-text font-sans antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #273449;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #374151;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-md text-sm font-medium transition-colors border border-border bg-surface hover:bg-surface-2 text-text;
+  }
+  .btn-primary {
+    @apply bg-brand-soft border-brand hover:bg-brand/80 text-white;
+  }
+  .card {
+    @apply bg-surface rounded-xl border border-border;
+  }
+  .card-hover {
+    @apply hover:border-border-2 hover:bg-surface-2 transition-colors;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium border;
+  }
+  .input {
+    @apply w-full px-3 py-1.5 rounded-md bg-surface border border-border text-sm text-text placeholder-text-subtle focus:outline-none focus:ring-1 focus:ring-brand focus:border-brand;
+  }
+  .select {
+    @apply px-3 py-1.5 rounded-md bg-surface border border-border text-sm text-text focus:outline-none focus:ring-1 focus:ring-brand focus:border-brand;
+  }
+  .section-title {
+    @apply text-sm font-semibold uppercase tracking-wider text-text-muted;
+  }
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2 rounded-md text-sm text-text-muted hover:bg-surface-2 hover:text-text transition-colors;
+  }
+  .nav-item-active {
+    @apply bg-brand-soft/50 text-white hover:bg-brand-soft/60;
+  }
+}
+
+.heatmap-cell {
+  @apply rounded-sm transition-all;
+}
